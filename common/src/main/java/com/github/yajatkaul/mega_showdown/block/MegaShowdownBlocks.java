@@ -159,7 +159,8 @@ public class MegaShowdownBlocks {
                                 .requiresCorrectToolForDrops()
                                 .strength(2)
                                 .mapColor(DyeColor.ORANGE)
-                                .sound(SoundType.METAL), form),
+                                .sound(SoundType.METAL),
+                                ResourceLocation.fromNamespaceAndPath(MegaShowdown.MOD_ID, name)),
                 (block) -> new RotomUnitItem(
                         block.get(),
                         new Item.Properties().arch$tab(MegaShowdownTabs.FORM_TAB),

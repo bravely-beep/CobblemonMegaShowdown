@@ -15,13 +15,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class RotomUnitItem extends PokemonSelectingBlockItem {
-    private static final List<String> rotomAspects = List.of(
-            "heat-appliance",
-            "wash-appliance",
-            "mow-appliance",
-            "frost-appliance",
-            "fan-appliance"
-    );
     private final String form;
 
     public RotomUnitItem(Block block, Properties properties, String form) {
@@ -35,8 +28,11 @@ public class RotomUnitItem extends PokemonSelectingBlockItem {
             return InteractionResultHolder.fail(itemStack);
         }
 
-        Effect.getEffect("mega_showdown:rotom_" + form + "_effect").applyEffects(pokemon, List.of(String.format("appliance=%s", this.form)), Optional.empty(), null);
-        itemStack.consume(1, serverPlayer);
+        if (pokemon.getAspects().contains(this.form + "-appliance")) {
+            Effect.getEffect("mega_showdown:rotom_effect").applyEffects(pokemon, List.of("appliance=none"), Optional.empty(), null);
+        } else {
+            Effect.getEffect("mega_showdown:rotom_" + form + "_effect").applyEffects(pokemon, List.of(String.format("appliance=%s", this.form)), Optional.empty(), null);
+        }
         AdvancementHelper.grantAdvancement(serverPlayer, "rotom/rotom_form_change");
         return InteractionResultHolder.success(itemStack);
     }
@@ -44,7 +40,6 @@ public class RotomUnitItem extends PokemonSelectingBlockItem {
     @Override
     public boolean canUseOnPokemon(@NotNull ItemStack stack, @NotNull Pokemon pokemon) {
         return pokemon.getSpecies().getName().equals("Rotom") &&
-                pokemon.getAspects().stream().noneMatch(rotomAspects::contains) &&
                 !pokemon.getPersistentData().contains("form_changing");
     }
 }
