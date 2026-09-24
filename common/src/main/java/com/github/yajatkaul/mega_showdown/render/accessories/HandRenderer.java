@@ -11,6 +11,7 @@ import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -62,17 +63,16 @@ public class HandRenderer implements AccessoryRenderer {
                 ? ItemDisplayContext.THIRD_PERSON_RIGHT_HAND
                 : ItemDisplayContext.THIRD_PERSON_LEFT_HAND;
 
-        Minecraft.getInstance().getItemRenderer().renderStatic(
-                entity,
+        BakedModel resolvedModel = AccessoryModelResolver.resolveHand3rd(stack);
+        Minecraft.getInstance().getItemRenderer().render(
                 stack,
                 context,
                 mainHandArm == HumanoidArm.RIGHT,
                 poseStack,
                 multiBufferSource,
-                entity.level(),
                 light,
                 OverlayTexture.NO_OVERLAY,
-                0
+                resolvedModel
         );
 
         poseStack.popPose();

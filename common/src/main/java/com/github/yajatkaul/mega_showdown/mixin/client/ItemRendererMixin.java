@@ -11,7 +11,6 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,10 +18,6 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(ItemRenderer.class)
 public abstract class ItemRendererMixin {
-    @Shadow
-    @Final
-    private ItemModelShaper itemModelShaper;
-
     @Shadow
     public abstract ItemModelShaper getItemModelShaper();
 
@@ -45,29 +40,7 @@ public abstract class ItemRendererMixin {
                 return getItemModelShaper().getModelManager().getModel(ModelResourceLocation.inventory(perspectives.groundLoc().get()));
             } else if (renderMode == ItemDisplayContext.FIXED) {
                 return getItemModelShaper().getModelManager().getModel(ModelResourceLocation.inventory(perspectives.fixedLoc().get()));
-            } else if (renderMode == ItemDisplayContext.FIRST_PERSON_LEFT_HAND) {
-                return getItemModelShaper().getModelManager().getModel(ModelResourceLocation.inventory(perspectives.hand().get()));
-            } else if (renderMode == ItemDisplayContext.FIRST_PERSON_RIGHT_HAND) {
-                return getItemModelShaper().getModelManager().getModel(ModelResourceLocation.inventory(perspectives.hand().get()));
-            } else if (renderMode == ItemDisplayContext.THIRD_PERSON_LEFT_HAND) {
-                return getItemModelShaper().getModelManager().getModel(ModelResourceLocation.inventory(perspectives.hand3rd().get()));
-            } else if (renderMode == ItemDisplayContext.THIRD_PERSON_RIGHT_HAND) {
-                return getItemModelShaper().getModelManager().getModel(ModelResourceLocation.inventory(perspectives.hand3rd().get()));
             }
-        }
-        return bakedModel;
-    }
-
-    @ModifyVariable(
-            method = "getModel",
-            at = @At(value = "STORE"),
-            ordinal = 1
-    )
-    public BakedModel getHeldItemModelMixin(BakedModel bakedModel, @Local(argsOnly = true) ItemStack stack) {
-        ItemRenderingCodec itemRenderingCodec = ItemRenderingLoader.get(BuiltInRegistries.ITEM.getKey(stack.getItem()));
-
-        if (itemRenderingCodec != null) {
-            return this.itemModelShaper.getModelManager().getModel(ModelResourceLocation.inventory(itemRenderingCodec.itemId_3d()));
         }
         return bakedModel;
     }

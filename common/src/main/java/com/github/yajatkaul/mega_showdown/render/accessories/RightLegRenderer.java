@@ -9,6 +9,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -44,8 +45,9 @@ public class RightLegRenderer implements AccessoryRenderer {
             poseStack.scale(1.2f, 1.2f, 1.2f);
         }
 
-        Minecraft.getInstance().getItemRenderer().renderStatic(
-                stack, ItemDisplayContext.NONE, light, OverlayTexture.NO_OVERLAY, poseStack, multiBufferSource, entity.level(), 0
+        BakedModel resolvedModel = AccessoryModelResolver.resolveItemId3d(stack);
+        Minecraft.getInstance().getItemRenderer().render(
+                stack, ItemDisplayContext.NONE, false, poseStack, multiBufferSource, light, OverlayTexture.NO_OVERLAY, resolvedModel
         );
 
         poseStack.popPose();

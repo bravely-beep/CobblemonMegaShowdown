@@ -10,6 +10,7 @@ import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -56,22 +57,20 @@ public class HighOffHandRenderer implements AccessoryRenderer {
             }
         }
 
-        // Use the correct display context based on which hand is the offhand
         ItemDisplayContext context = (offHandArm == HumanoidArm.LEFT)
                 ? ItemDisplayContext.THIRD_PERSON_LEFT_HAND
                 : ItemDisplayContext.THIRD_PERSON_RIGHT_HAND;
 
-        Minecraft.getInstance().getItemRenderer().renderStatic(
-                entity,
+        BakedModel resolvedModel = AccessoryModelResolver.resolveHand3rd(stack);
+        Minecraft.getInstance().getItemRenderer().render(
                 stack,
                 context,
                 offHandArm == HumanoidArm.LEFT,
                 poseStack,
                 multiBufferSource,
-                entity.level(),
                 light,
                 OverlayTexture.NO_OVERLAY,
-                0
+                resolvedModel
         );
 
         poseStack.popPose();
