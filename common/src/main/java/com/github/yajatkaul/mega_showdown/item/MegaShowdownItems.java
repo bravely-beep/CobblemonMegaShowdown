@@ -292,7 +292,11 @@ public class MegaShowdownItems {
 
     public static final RegistrySupplier<Item> MAY_BRACELET = registerMegaBracelet("may_bracelet");
     public static final RegistrySupplier<Item> MEGA_RING = registerMegaBracelet("mega_ring");
-    public static final RegistrySupplier<Item> LYSANDRE_RING = registerMegaBracelet("lysandre_ring");
+    public static final RegistrySupplier<Item> LYSANDRE_RING = ITEMS.register("lysandre_ring", () -> new LysandreRing(
+            new Item.Properties()
+                    .stacksTo(1)
+                    .arch$tab(MegaShowdownTabs.MEGA_TAB))
+    );
 
     public static final RegistrySupplier<Item> BRENDAN_MEGA_CUFF = registerMegaBracelet("brendan_mega_cuff");
     public static final RegistrySupplier<Item> KORRINA_GLOVE = registerMegaBracelet("korrina_glove");

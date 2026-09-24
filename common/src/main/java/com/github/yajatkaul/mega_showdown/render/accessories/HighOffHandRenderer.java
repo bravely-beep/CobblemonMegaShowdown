@@ -41,23 +41,23 @@ public class HighOffHandRenderer implements AccessoryRenderer {
         }
         poseStack.pushPose();
 
-        // Determine which arm is the offhand
-        HumanoidArm offHandArm = (entity.getMainArm() == HumanoidArm.RIGHT) ? HumanoidArm.LEFT : HumanoidArm.RIGHT;
+        // Accessories convention: even slot index renders on the right arm, odd on the left
+        HumanoidArm renderArm = (reference.slot() % 2 == 0) ? HumanoidArm.RIGHT : HumanoidArm.LEFT;
 
         if (model instanceof ArmedModel armedModel) {
-            armedModel.translateToHand(offHandArm, poseStack);
+            armedModel.translateToHand(renderArm, poseStack);
 
             poseStack.mulPose(Axis.XP.rotationDegrees(-90.0F));
             poseStack.mulPose(Axis.YP.rotationDegrees(180.0F));
 
-            if (offHandArm == HumanoidArm.RIGHT) {
+            if (renderArm == HumanoidArm.RIGHT) {
                 poseStack.translate(1.0F / 16.0F, 1.0F / 8.0F, -8.0F / 16.0F);
             } else {
                 poseStack.translate(-1.0F / 16.0F, 1.0F / 8.0F, -8.0F / 16.0F);
             }
         }
 
-        ItemDisplayContext context = (offHandArm == HumanoidArm.LEFT)
+        ItemDisplayContext context = (renderArm == HumanoidArm.LEFT)
                 ? ItemDisplayContext.THIRD_PERSON_LEFT_HAND
                 : ItemDisplayContext.THIRD_PERSON_RIGHT_HAND;
 
@@ -65,7 +65,7 @@ public class HighOffHandRenderer implements AccessoryRenderer {
         Minecraft.getInstance().getItemRenderer().render(
                 stack,
                 context,
-                offHandArm == HumanoidArm.LEFT,
+                renderArm == HumanoidArm.LEFT,
                 poseStack,
                 multiBufferSource,
                 light,

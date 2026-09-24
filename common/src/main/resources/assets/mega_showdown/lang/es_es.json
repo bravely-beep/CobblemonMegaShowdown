@@ -642,10 +642,6 @@
   "cobblemon.ui.stats.dynamax_level": "Nivel Dinamax",
   "cobblemon.ui.stash.meltan": "Meltans",
 
-  "accessories.slot.mega_slot": "Ranura Mega",
-  "accessories.slot.z_slot": "Ranura Z",
-  "accessories.slot.tera_slot": "Ranura Tera",
-  "accessories.slot.dynamax_slot": "Ranura Dinamax",
 
   "item.mega_showdown.likos_pendant": "Colgante de Liko",
   "tooltip.mega_showdown.likos_pendant.tooltip": "§7Un colgante que, según se dice, resuena con energías ancestrales. Silenciosamente, fortalece el corazón de un verdadero entrenador",

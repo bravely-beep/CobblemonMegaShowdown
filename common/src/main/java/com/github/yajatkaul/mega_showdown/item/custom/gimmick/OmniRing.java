@@ -14,8 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.List;
-
 public class OmniRing extends ToolTipItem {
     public OmniRing(Properties properties) {
         super(properties);
@@ -30,26 +28,22 @@ public class OmniRing extends ToolTipItem {
             return InteractionResultHolder.pass(stack);
         }
 
-        List<String> slots = List.of("dynamax_slot", "tera_slot", "z_slot", "mega_slot");
+        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "wrist"));
+        ExpandedSimpleContainer accessories = slot.getAccessories();
 
-        for (String slotName : slots) {
-            AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, slotName));
-            ExpandedSimpleContainer accessories = slot.getAccessories();
+        if (accessories == null) {
+            MegaShowdown.LOGGER.info("No wrist slot found");
+            return InteractionResultHolder.pass(stack);
+        }
 
-            if (accessories == null) {
-                MegaShowdown.LOGGER.info("No {} found", slot);
-                return InteractionResultHolder.pass(stack);
-            }
+        for (int i = 0; i < accessories.getContainerSize(); i++) {
+            if (accessories.getItem(i).isEmpty()) {
+                accessories.setItem(i, stack.copy());
+                player.setItemInHand(hand, ItemStack.EMPTY);
 
-            for (int i = 0; i < accessories.getContainerSize(); i++) {
-                if (accessories.getItem(i).isEmpty()) {
-                    accessories.setItem(i, stack.copy());
-                    player.setItemInHand(hand, ItemStack.EMPTY);
-
-                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
-                            SoundEvents.ARMOR_EQUIP_GENERIC.value(), SoundSource.PLAYERS, 1.0f, 1.0f);
-                    return InteractionResultHolder.success(stack);
-                }
+                level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.ARMOR_EQUIP_GENERIC.value(), SoundSource.PLAYERS, 1.0f, 1.0f);
+                break;
             }
         }
 

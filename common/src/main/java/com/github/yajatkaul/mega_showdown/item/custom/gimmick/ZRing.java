@@ -28,11 +28,11 @@ public class ZRing extends ToolTipItem {
             return InteractionResultHolder.pass(stack);
         }
 
-        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "z_slot"));
+        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "wrist"));
         ExpandedSimpleContainer accessories = slot.getAccessories();
 
         if (accessories == null) {
-            MegaShowdown.LOGGER.info("No z_slot found");
+            MegaShowdown.LOGGER.info("No wrist slot found");
             return InteractionResultHolder.pass(stack);
         }
 

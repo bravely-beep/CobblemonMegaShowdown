@@ -35,8 +35,11 @@ public class RightLegRenderer implements AccessoryRenderer {
 
         poseStack.pushPose();
 
+        // Accessories convention: even slot index renders on the right leg, odd on the left
+        boolean rightLeg = reference.slot() % 2 == 0;
+
         if (model instanceof HumanoidModel<?> humanoidModel) {
-            humanoidModel.rightLeg.translateAndRotate(poseStack);
+            (rightLeg ? humanoidModel.rightLeg : humanoidModel.leftLeg).translateAndRotate(poseStack);
         }
 
         poseStack.mulPose(Axis.ZP.rotationDegrees(180));

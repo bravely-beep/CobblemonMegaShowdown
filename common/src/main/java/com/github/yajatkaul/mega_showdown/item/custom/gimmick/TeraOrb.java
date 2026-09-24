@@ -28,11 +28,11 @@ public class TeraOrb extends ToolTipItem {
             return InteractionResultHolder.pass(stack);
         }
 
-        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "tera_slot"));
+        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "belt"));
         ExpandedSimpleContainer accessories = slot.getAccessories();
 
         if (accessories == null) {
-            MegaShowdown.LOGGER.info("No tera_slot found");
+            MegaShowdown.LOGGER.info("No belt slot found");
             return InteractionResultHolder.pass(stack);
         }
 

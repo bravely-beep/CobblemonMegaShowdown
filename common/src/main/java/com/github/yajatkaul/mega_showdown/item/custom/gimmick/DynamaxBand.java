@@ -28,11 +28,11 @@ public class DynamaxBand extends ToolTipItem {
             return InteractionResultHolder.pass(stack);
         }
 
-        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "dynamax_slot"));
+        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "wrist"));
         ExpandedSimpleContainer accessories = slot.getAccessories();
 
         if (accessories == null) {
-            MegaShowdown.LOGGER.info("No tera_slot found");
+            MegaShowdown.LOGGER.info("No wrist slot found");
             return InteractionResultHolder.pass(stack);
         }
 

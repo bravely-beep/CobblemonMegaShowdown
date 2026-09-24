@@ -15,11 +15,9 @@ public class AccessoriesRegisterRenderer {
 
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.MAY_BRACELET.get(), LowOffHandRenderer::new);
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.MEGA_RING.get(), LowOffHandRenderer::new);
-        AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.LYSANDRE_RING.get(), LowOffHandRenderer::new);
 
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.BRENDAN_MEGA_CUFF.get(), LowOffHandRenderer::new);
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.KORRINA_GLOVE.get(), LowOffHandRenderer::new);
-        AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.MAXIE_GLASSES.get(), HeadRenderer::new);
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.ARCHIE_ANCHOR.get(), ChestRenderer::new);
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.LISIA_MEGA_TIARA.get(), HeadRenderer::new);
         AccessoriesRendererRegistry.registerRenderer(MegaShowdownItems.DIANTHA_MEGA_CHARM.get(), ChestRenderer::new);

@@ -63,10 +63,10 @@ public class LikosPendant extends ToolTipItem {
             return InteractionResultHolder.pass(stack);
         }
 
-        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "tera_slot"));
+        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "necklace"));
 
         if (slot == null) {
-            MegaShowdown.LOGGER.info("No tera_slot found");
+            MegaShowdown.LOGGER.info("No necklace slot found");
             return InteractionResultHolder.pass(stack);
         }
 

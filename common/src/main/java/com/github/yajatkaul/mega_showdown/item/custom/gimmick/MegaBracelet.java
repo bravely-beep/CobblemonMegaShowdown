@@ -28,11 +28,11 @@ public class MegaBracelet extends ToolTipItem {
             return InteractionResultHolder.pass(stack);
         }
 
-        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, "mega_slot"));
+        AccessoriesContainer slot = capability.getContainer(SlotTypeLoader.getSlotType(level, getSlotName()));
         ExpandedSimpleContainer accessories = slot.getAccessories();
 
         if (accessories == null) {
-            MegaShowdown.LOGGER.info("No mega_slot found");
+            MegaShowdown.LOGGER.info("No {} slot found", getSlotName());
             return InteractionResultHolder.pass(stack);
         }
 
@@ -48,5 +48,9 @@ public class MegaBracelet extends ToolTipItem {
         }
 
         return InteractionResultHolder.pass(stack);
+    }
+
+    protected String getSlotName() {
+        return "wrist";
     }
 }
