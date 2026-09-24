@@ -12,10 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import java.util.function.Function;
 
 public class AccessoryModelResolver {
-    public static BakedModel resolveHand3rd(ItemStack stack) {
-        return resolve(stack, codec -> codec.perspectivesCodec().hand3rd().get());
-    }
-
     public static BakedModel resolveItemId3d(ItemStack stack) {
         return resolve(stack, ItemRenderingCodec::itemId_3d);
     }
