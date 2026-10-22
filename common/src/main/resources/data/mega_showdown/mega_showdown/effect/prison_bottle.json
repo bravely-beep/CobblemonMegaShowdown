@@ -10,7 +10,9 @@
     },
     "particle_apply_amplifier": 4,
     "animations": {
+	  "apply_delay": 0.2,
       "animations_apply": ["cry"],
+      "revert_delay": 0.2,
       "animations_revert": ["cry"]
     }
   }

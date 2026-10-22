@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:electric_gem"
+  },
+  "result": {
+    "id": "mega_showdown:electric_tera_shard",
+    "count": 2
+  }
+}

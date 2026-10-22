@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:flying_gem_block"
+  },
+  "result": {
+    "id": "mega_showdown:flying_tera_shard",
+    "count": 8
+  }
+}

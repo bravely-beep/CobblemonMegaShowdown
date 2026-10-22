@@ -27,6 +27,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.CommonColors;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -222,6 +223,10 @@ public class BattlePokemonMemory {
     }
 
     public void setItem(CobblemonItem item) {
+        this.item = new Illusory<>(this.illusionBroken, item.getDescriptionId());
+    }
+
+    public void setItem(ItemNameBlockItem item) {
         this.item = new Illusory<>(this.illusionBroken, item.getDescriptionId());
     }
 

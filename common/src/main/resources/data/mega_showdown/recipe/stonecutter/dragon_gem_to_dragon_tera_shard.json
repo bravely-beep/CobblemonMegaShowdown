@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:dragon_gem"
+  },
+  "result": {
+    "id": "mega_showdown:dragon_tera_shard",
+    "count": 2
+  }
+}

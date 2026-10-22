@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:psychic_gem"
+  },
+  "result": {
+    "id": "mega_showdown:psychic_tera_shard",
+    "count": 2
+  }
+}

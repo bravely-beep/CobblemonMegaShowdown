@@ -1,0 +1,52 @@
+{
+  "species": "cobblemon:kyogre",
+  "order": 1,
+  "variations": [
+    {
+      "aspects": ["primal"],
+      "poser": "cobblemon:kyogre_primal",
+      "model": "cobblemon:kyogre_primal.geo",
+      "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal.png",
+      "layers": [
+        {
+          "name": "translucent",
+          "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal_translucent.png",
+          "translucent": true,
+          "translucent_cull": true
+        },
+        {
+          "name": "emissive",
+          "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal_emissive.png",
+          "emissive": true
+        }
+      ]
+    },
+    {
+      "aspects": ["primal", "shiny"],
+      "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal_shiny.png",
+      "layers": [
+        {
+          "name": "translucent",
+          "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal_translucent.png",
+          "translucent": true,
+          "translucent_cull": true
+        },
+        {
+          "name": "emissive",
+          "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal_emissive_shiny.png",
+          "emissive": true
+        }
+      ]
+    },
+    {
+      "aspects": ["primal", "alpha_eyes"],
+      "layers": [
+        {
+          "name": "alpha_eyes",
+          "texture": "cobblemon:textures/pokemon/0382_kyogre/kyogre_primal_alpha.png",
+          "emissive": true
+        }
+      ]
+    }
+  ]
+}

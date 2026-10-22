@@ -5093,26 +5093,24 @@ const Abilities = {
     num: 19,
   },
   shieldsdown: {
+    onSwitchInPriority: -1,
     onStart(pokemon) {
-      if (pokemon.hp > pokemon.maxhp / 2 && pokemon.species.id == "minior") {
-        pokemon.formeChange("Minior-Meteor");
+      if (pokemon.baseSpecies.baseSpecies !== "Minior" || pokemon.transformed) return;
+      const isMeteor = pokemon.species.id === "miniormeteor";
+      if (pokemon.hp > pokemon.maxhp / 2) {
+        if (!isMeteor) pokemon.formeChange("Minior-Meteor");
       } else {
-        if (pokemon.species.id == "miniormeteor") {
-          return;
-        }
+        if (isMeteor) pokemon.formeChange("Minior");
       }
     },
     onResidualOrder: 29,
     onResidual(pokemon) {
-      if (pokemon.hp > pokemon.maxhp / 2 && pokemon.species.id == "minior") {
-        pokemon.formeChange("Minior-Meteor");
+      if (pokemon.baseSpecies.baseSpecies !== "Minior" || pokemon.transformed || !pokemon.hp) return;
+      const isMeteor = pokemon.species.id === "miniormeteor";
+      if (pokemon.hp > pokemon.maxhp / 2) {
+        if (!isMeteor) pokemon.formeChange("Minior-Meteor");
       } else {
-        if (
-          pokemon.hp < pokemon.maxhp / 2 &&
-          pokemon.species.id == "miniormeteor"
-        ) {
-          pokemon.formeChange("Minior");
-        }
+        if (isMeteor) pokemon.formeChange("Minior");
       }
     },
     onSetStatus(status, target, source, effect) {
@@ -5128,17 +5126,10 @@ const Abilities = {
       this.add("-immune", target, "[from] ability: Shields Down");
       return null;
     },
-    flags: {
-      failroleplay: 1,
-      noreceiver: 1,
-      noentrain: 1,
-      notrace: 1,
-      failskillswap: 1,
-      cantsuppress: 1,
-    },
+    flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
     name: "Shields Down",
     rating: 3,
-    num: 197,
+    num: 197
   },
   simple: {
     onChangeBoost(boost, target, source, effect) {

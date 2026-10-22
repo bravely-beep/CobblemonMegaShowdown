@@ -1,0 +1,60 @@
+{
+  "portraitScale": 1.84,
+  "portraitTranslation": [-0.11, -0.41, 0.0],
+  "profileScale": 1,
+  "profileTranslation": [0.0, 0.22, 0.0],
+  "rootBone": "minior",
+  "animations": {
+    "cry": "q.bedrock_stateful('minior', 'cry')",
+    "recoil": "q.bedrock_stateful('minior', 'recoil')",
+    "faint": "q.bedrock_stateful('minior', 'faint_meteor', q.curve('symmetrical_wide'))",
+    "physical": "q.bedrock_primary('minior', 'physical_meteor', q.curve('symmetrical_wide'))",
+    "special": "q.bedrock_primary('minior', 'special_meteor', q.curve('one'))",
+    "status": "q.bedrock_primary('minior', 'status_meteor', q.curve('one'))",
+    "form_change": "q.bedrock_primary('minior', 'shell_break', q.curve('one'))",
+    "form_change_meteor": "q.bedrock_primary('minior', 'shell_reform', q.curve('one'))"
+  },
+  "poses": {
+    "portrait": {
+      "poseTypes": ["PORTRAIT", "PROFILE"],
+      "animations": [
+        "q.look('head_ai')", 
+        "q.bedrock('minior', 'ground_idle_core')"
+      ],
+      "quirks": []
+    },
+    "standing": {
+      "poseTypes": ["STAND", "FLOAT", "HOVER", "NONE"],
+      "isBattle": false,
+      "animations": [
+        "q.look('head_ai')", 
+        "q.bedrock('minior', 'ground_idle_meteor')"
+      ],
+      "quirks": [],
+      "transformTicks": 5,
+      "transformToTicks": 5
+    },
+    "battle-standing": {
+      "poseTypes": ["STAND"],
+      "isBattle": true,
+      "animations": [
+        "q.look('head_ai')", 
+        "q.bedrock('minior', 'ground_idle_meteor')"
+      ],
+      "quirks": [],
+      "namedAnimations": { "cry": "q.bedrock_primary('minior', 'battle_cry_meteor', q.curve('symmetrical_wide'))" },
+      "transformTicks": 5,
+      "transformToTicks": 5
+    },
+    "walking": {
+      "poseTypes": ["WALK", "SWIM", "FLY"],
+      "animations": [
+        "q.look('head_ai')", 
+        "q.bedrock('minior', 'ground_walk_meteor')"
+      ],
+      "quirks": [],
+      "transformTicks": 5,
+      "transformToTicks": 5
+    }
+  }
+}

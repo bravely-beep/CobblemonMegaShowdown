@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:poison_gem_block"
+  },
+  "result": {
+    "id": "mega_showdown:poison_tera_shard",
+    "count": 8
+  }
+}

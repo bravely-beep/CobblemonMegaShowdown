@@ -1,4 +1,12 @@
 {
+  "pokemon.gengar_mega.cry": {
+    "sounds": [
+      {
+        "name": "cobblemon:pokemon/gengar/gengar_mega_cry",
+        "volume": 0.8
+      }
+    ]
+  },
   "pokemon.minior.cry": {
     "sounds": ["cobblemon:pokemon/minior/cry"]
   },

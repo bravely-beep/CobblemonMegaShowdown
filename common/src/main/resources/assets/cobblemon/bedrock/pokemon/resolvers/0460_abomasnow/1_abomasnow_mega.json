@@ -3,19 +3,14 @@
   "order": 1,
   "variations": [
     {
-      "aspects": [
-        "mega"
-      ],
+      "aspects": ["mega"],
       "poser": "cobblemon:abomasnow_mega",
       "model": "cobblemon:abomasnow_mega.geo",
-      "texture": "cobblemon:textures/pokemon/0460_abomasnow/megaabomasnow.png"
+      "texture": "cobblemon:textures/pokemon/0460_abomasnow/abomasnow_mega.png"
     },
     {
-      "aspects": [
-        "mega",
-        "shiny"
-      ],
-      "texture": "cobblemon:textures/pokemon/0460_abomasnow/megaabomasnow_shiny.png"
+      "aspects": ["mega", "shiny"],
+      "texture": "cobblemon:textures/pokemon/0460_abomasnow/abomasnow_mega_shiny.png"
     }
   ]
 }

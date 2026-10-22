@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:fire_gem_block"
+  },
+  "result": {
+    "id": "mega_showdown:fire_tera_shard",
+    "count": 8
+  }
+}

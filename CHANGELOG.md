@@ -1,5 +1,13 @@
-# 1.1.3+1.8+1.21.1-release
-- Fixed Alolan-Bias Cosplay Pikachu forms
-- Made Mega Delphox rideable
-- New dynamax band model
-- Fixed corviknight gmax poser
+# 1.3.1+1.8.2+1.21.1-release
+- Gems to Tera-Shards
+- New Mega Pidgeot Model: By: definitely_skull11
+- New Minior Animations By: Quinn284 (Some fixes from Sherbet)
+- New Mega Gengar Model By: Quinn284
+- New Kyogre Model By: Quinn284
+- New Primal Kyogre Model By: Quinn284
+- Fixed Minior Ability
+- Fixed Some Form Changes Sounds (Kyogre/Groudon/Hoopa)
+- Fixed Missing Mega Abomasnow Model
+- Fixed Greninja Species File (Sizes issues)
+- Deleyed Mega Evolution Effect to fix some battle cry animations
+- Added german and jp translations

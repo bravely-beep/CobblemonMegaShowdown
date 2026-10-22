@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:bug_gem_block"
+  },
+  "result": {
+    "id": "mega_showdown:bug_tera_shard",
+    "count": 8
+  }
+}

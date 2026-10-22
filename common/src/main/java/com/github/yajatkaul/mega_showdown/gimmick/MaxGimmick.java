@@ -37,7 +37,7 @@ public record MaxGimmick(
     }
 
     public static void startGradualScalingDown(Pokemon pokemon) {
-        if (pokemon == null) return;
+        if (pokemon == null || pokemon.getEntity() == null) return;
 
         pokemon.getEntity().setGlowingTag(false);
 

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cobblemon:ghost_gem_block"
+  },
+  "result": {
+    "id": "mega_showdown:ghost_tera_shard",
+    "count": 8
+  }
+}
