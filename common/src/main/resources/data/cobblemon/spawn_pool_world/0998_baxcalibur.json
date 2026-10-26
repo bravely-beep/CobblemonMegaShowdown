@@ -1,0 +1,52 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+         {
+      "id": "baxcalibur-1",
+      "pokemon": "baxcalibur",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "rare",
+      "level": "55-66",
+      "weight": 2.5,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "minecraft:frozen_peaks",
+          "minecraft:ice_spikes",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_cold"
+        ]
+      }
+    },
+    {
+            "id": "baxcalibur-2",
+            "pokemon": "baxcalibur",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "55-66",
+            "weight": 2.5,
+            "condition": {
+                "biomes": [
+
+                    "#cobblemon:nether/is_frozen"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:nether/is_quartz",
+                    "#cobblemon:nether/is_toxic"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+         {
+      "id": "arctibax-1",
+      "pokemon": "arctibax",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "rare",
+      "level": "47-51",
+      "weight": 3.33,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "minecraft:frozen_peaks",
+          "minecraft:ice_spikes",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_cold"
+        ]
+      }
+    },
+    {
+            "id": "arctibax-2",
+            "pokemon": "arctibax",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "28-32",
+            "weight": 5.4,
+            "condition": {
+                "biomes": [
+
+                    "#cobblemon:nether/is_frozen"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:nether/is_quartz",
+                    "#cobblemon:nether/is_toxic"
+                ]
+            }
+        }
+    ]
+}

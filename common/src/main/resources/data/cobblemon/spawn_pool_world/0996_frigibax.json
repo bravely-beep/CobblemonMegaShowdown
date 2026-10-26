@@ -1,0 +1,52 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+         {
+      "id": "frigibax-1",
+      "pokemon": "frigibax",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "rare",
+      "level": "30-42",
+      "weight": 6,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "minecraft:frozen_peaks",
+          "minecraft:ice_spikes",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_cold"
+        ]
+      }
+    },
+    {
+            "id": "frigbax-2",
+            "pokemon": "frigibax",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "28-32",
+            "weight": 10,
+            "condition": {
+                "biomes": [
+
+                    "#cobblemon:nether/is_frozen"
+                ]
+            },
+            "anticondition": {
+                "biomes": [
+                    "#cobblemon:nether/is_quartz",
+                    "#cobblemon:nether/is_toxic"
+                ]
+            }
+        }
+    ]
+}

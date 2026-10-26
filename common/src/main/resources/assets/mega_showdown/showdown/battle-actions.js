@@ -2349,7 +2349,7 @@ class BattleActions {
       for (const move of pokemon.baseMoves) {
           const megaEvolution = altFormes[move]?.megaStone?.[species.name];
           if (megaEvolution) {
-              if (pokemon.volatiles["dynamax"] || pokemon.terastallized) return null;
+              if (pokemon.volatiles["dynamax"] || (pokemon.getItem().zMove) || pokemon.terastallized) return null;
               return megaEvolution;
           }
       }

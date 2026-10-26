@@ -7,53 +7,11 @@
   "maleRatio": -1,
   "height": 200,
   "weight": 9500,
-  "pokedex": [
-    "cobblemon.species.eternatus.desc"
-  ],
-  "labels": [
-    "gen8",
-    "legendary",
-    "restricted"
-  ],
+  "pokedex": ["cobblemon.species.eternatus.desc"],
+  "labels": ["gen8", "legendary", "restricted"],
   "aspects": [],
-  "abilities": [
-    "pressure",
-    "h:pressure"
-  ],
-  "eggGroups": [
-    "undiscovered"
-  ],
-  "riding": {
-    "behaviours": {
-      "AIR": {
-        "key": "cobblemon:air/bird",
-        "rideSounds": [],
-        "stats": {
-          "ACCELERATION": "41-60",
-          "JUMP": "41-60",
-          "SKILL": "41-60",
-          "SPEED": "21-40",
-          "STAMINA": "81-130"
-        }
-      },
-      "LAND": {
-        "key": "cobblemon:land/horse",
-        "rideSounds": [],
-        "stats": {
-          "ACCELERATION": "21-40",
-          "JUMP": "41-60",
-          "SKILL": "21-40",
-          "SPEED": "21-40",
-          "STAMINA": "41-60"
-        }
-      }
-    },
-    "seats": [
-      {
-        "locator": "seat_1"
-      }
-    ]
-  },
+  "abilities": ["pressure", "h:pressure"],
+  "eggGroups": ["undiscovered"],
   "baseStats": {
     "hp": 140,
     "attack": 85,
@@ -174,23 +132,46 @@
       "maleRatio": -1,
       "height": 1000,
       "weight": 0,
-      "pokedex": [
-        "cobblemon.species.eternatus-eternamax.desc"
-      ],
-      "labels": [
-        "gen8",
-        "legendary",
-        "restricted"
-      ],
+      "pokedex": ["cobblemon.species.eternatus-eternamax.desc"],
+      "labels": ["gen8", "legendary", "restricted"],
       "baseScale": 4,
       "hitbox": {
         "width": 4,
         "height": 4,
         "fixed": false
       },
-      "aspects": [
-        "eternamax"
-      ],
+      "riding": {
+        "behaviours": {
+          "AIR": {
+            "key": "cobblemon:air/bird",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "41-60",
+              "JUMP": "41-60",
+              "SKILL": "41-60",
+              "SPEED": "21-40",
+              "STAMINA": "81-130"
+            }
+          },
+          "LAND": {
+            "key": "cobblemon:land/horse",
+            "rideSounds": [],
+            "stats": {
+              "ACCELERATION": "21-40",
+              "JUMP": "41-60",
+              "SKILL": "21-40",
+              "SPEED": "21-40",
+              "STAMINA": "41-60"
+            }
+          }
+        },
+        "seats": [
+          {
+            "locator": "seat_1"
+          }
+        ]
+      },
+      "aspects": ["eternamax"],
       "baseStats": {
         "hp": 255,
         "attack": 115,
