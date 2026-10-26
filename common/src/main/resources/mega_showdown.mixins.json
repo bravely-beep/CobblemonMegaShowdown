@@ -26,6 +26,7 @@
     "MovesAccessor",
     "PlayerPartyStoreMixin",
     "PokemonEntityMixin",
+    "PokemonMixin",
     "PokemonSpeciesMixin",
     "TamableAnimalMixin",
     "TeraTypesAccessor",
