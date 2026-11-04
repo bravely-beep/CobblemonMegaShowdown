@@ -16,8 +16,8 @@ public class GimmickTurnCheck {
     public static void check(ServerPlayer player) {
         GeneralPlayerData data = Cobblemon.INSTANCE.getPlayerDataManager().getGenericData(player);
 
-        if (PlayerUtils.isBlockNearby(player, MegaShowdownTags.Blocks.POWER_SPOT, MegaShowdownConfig.powerSpotRange)
-                || MegaShowdownConfig.dynamaxAnywhere) {
+        if (MegaShowdownConfig.dynamaxAnywhere || 
+               PlayerUtils.isBlockNearby(player, MegaShowdownTags.Blocks.POWER_SPOT, MegaShowdownConfig.powerSpotRange)) {
             if (hasGimmick(ShowdownMoveset.Gimmick.DYNAMAX, player)) {
                 data.getKeyItems().add(ResourceLocation.fromNamespaceAndPath("cobblemon", "dynamax_band"));
             } else {
